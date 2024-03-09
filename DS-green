@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deploy
+  labels:
+    app: swiggy
+    env: green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swiggy
+      env: green
+  template:
+    metadata:
+      labels:
+        app: swiggy
+        env: green
+    spec:
+      containers:
+        - name: cont-6
+          image: shaikmustafa/dm
+          ports:
+            - containerPort: 80
