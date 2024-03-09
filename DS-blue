@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deploy
+  labels:
+    app: swiggy
+    env: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swiggy
+      env: blue
+  template:
+    metadata:
+      labels:
+        app: swiggy
+        env: blue
+    spec:
+      containers:
+        - name: cont-6
+          image: nginx
+          ports:
+            - containerPort: 80
