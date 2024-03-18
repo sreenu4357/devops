@@ -1,0 +1,16 @@
+yum install httpd -y && systemctl start httpd
+    2  systemctl status httpd
+    3  sudo yum install -y amazon-efs-utils
+    4  cd /var/www/
+    5  ll
+    6  cd html
+    7  vim index.html
+    8  cd
+    9  sudo mount -t efs -o tls fs-009eb378725bc087c:/ /var/www/html
+   10  vim /var/www/html/index.html
+   11  cd /var/www/
+   12  ll
+   13  cd html
+   14  vim index.html
+   15  ll
+   16  vim index.html
